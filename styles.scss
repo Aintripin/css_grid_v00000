@@ -11,41 +11,63 @@
     font-size: 12px;
     text-align: center;
     display: grid;
-    grid-template-columns: auto auto auto;
+    // grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: 5fr 3fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 1vw;
+    grid-row-gap: 1vh;
+    height: 100vh;
+    grid-template-areas: 
+        "content1 content1 content1"        // content1 will span the first row completely
+        "content2 content3 content4"        // content2 will be like a side-bar
+        "content2 content5 content6"        // content3, content4m content 5 & content6
+                                            // will just flow naturally
+        // "content2 content"
 }
 
 #content1 {
     background: #c9268d;
     border-radius: var(--radius);
     padding-top: var(--padding);
+    // grid-column: 1/3;
+    grid-area: content1;
 }
 
 #content2 {
     background: #d81b60;
     border-radius: var(--radius);
     padding-top: var(--padding);    
+    // grid-row: 2/4;
+    grid-area: content2;
 }
 
 #content3 {
     background: #b31077;
     border-radius: var(--radius);
-    padding-top: var(--padding);    
+    padding-top: var(--padding);   
+    grid-area: content3; 
 }
 
 #content4 {
     background: #d81b60;
     border-radius: var(--radius);
     padding-top: var(--padding);    
+    // grid-column: 3/4;
+    // grid-row: 1/2;
+    grid-area: content4;
 }
 
 #content5 {
     background: #d81b60;
     border-radius: var(--radius);
-    padding-top: var(--padding);    
+    padding-top: var(--padding);  
+    grid-area: content5;
 }
 
 #content6 {
     background: #d81b60;
     border-radius: var(--radius);
-    padding-top: var(--padding);    
+    padding-top: var(--padding);  
+    grid-area: content6;
 }
